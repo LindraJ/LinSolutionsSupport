@@ -1,8 +1,11 @@
 import React from 'react'
 import './Dashboard.css'
+import { useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 
-const SignIn = ({onPageChange}) => {
+const SignIn = () => {
+    const navigate = useNavigate();
+
     return(
         <div className='flex flex-column items-center'>
             <div className='bg-light-gray'>
@@ -21,10 +24,10 @@ const SignIn = ({onPageChange}) => {
                             </div>
                         </fieldset>
                         <div class="flex justify-center">
-                                <input onClick= {onPageChange} class=" b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in"/>
+                                <input onClick= {() => navigate("/Dashboard")} class=" b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in"/>
                         </div>
                         <div class="lh-copy mt3">
-                            <a href="#0" class="flex justify-center f6 link dim black db">New user? Sign up</a>
+                            <a onClick= {() => navigate("/SignUp")} href="#0" class="flex justify-center f6 link dim black db">New user? Sign up</a>
                         </div>
                     </form>
                 </main>
