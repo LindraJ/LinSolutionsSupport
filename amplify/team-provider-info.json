@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-linsolutionssupport-dev-d79c7-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423623801:role/amplify-linsolutionssupport-dev-d79c7-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423623801:role/amplify-linsolutionssupport-dev-d79c7-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-linsolutionssupport-dev-d79c7-deployment",
+      "UnauthRoleName": "amplify-linsolutionssupport-dev-d79c7-unauthRole",
+      "StackName": "amplify-linsolutionssupport-dev-d79c7",
+      "StackId": "arn:aws:cloudformation:us-east-1:637423623801:stack/amplify-linsolutionssupport-dev-d79c7/15b988e0-a149-11ef-a752-12628249c881",
+      "AmplifyAppId": "d1a8sdtx48g6xo"
+    }
+  }
+}
