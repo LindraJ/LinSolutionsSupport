@@ -1,0 +1,21 @@
+version: 1.0
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Navigate to the directory containing the package.json file
+        - cd src/linsolutionssupport/support
+        # Install npm dependencies from the correct path
+        - npm install
+    build:
+      commands:
+        # Build the app from the correct directory
+        - npm run build
+  artifacts:
+    baseDirectory: build  # Point to the directory where your build outputs
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*  # Cache node_modules to speed up future builds
