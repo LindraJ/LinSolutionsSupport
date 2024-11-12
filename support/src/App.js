@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reanhkjhkct
-        </a>
-      </header>
-    </div>
-  );
+import React, {Component} from 'react'
+import './App.css'
+import SignIn from './SignIn'
+import Dashboard from './Dashboard'
+import Device from './Device'
+
+let pageChange
+class App extends Component {
+    constructor(){
+        super();
+        this.state = {
+            "device": '',
+            "input": '',
+            "route": 'SignIn',
+        }
+    }
+    pageChange = (nextPage) => {
+        this.setState(
+            {"route": `${nextPage}`}
+        )
+
+    }
+
+
+    render(){
+        return (
+            <div>
+              {
+                this.state.route === 'SignIn' ? (
+                  <SignIn onPageChange={() => this.pageChange("Dashboard")} />
+                ) : (
+                  this.state.route === 'Dashboard' ? (
+                    <Dashboard onPageChange={() => this.pageChange("Device")} />
+                  ) : (
+                    this.state.route === "Device" ? (
+                        <Device onPageChange={() => this.pageChange("Device")}/>
+                    ) :
+                        <Device onPageChange={() => this.pageChange("Device")}/>
+                  )
+                )
+              }
+            </div>
+          );
+    }
 }
 
-export default App;
+export default App
