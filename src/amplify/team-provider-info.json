@@ -1,0 +1,49 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-linsolutionssupport-dev-f2aa2-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423623801:role/amplify-linsolutionssupport-dev-f2aa2-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423623801:role/amplify-linsolutionssupport-dev-f2aa2-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+      "UnauthRoleName": "amplify-linsolutionssupport-dev-f2aa2-unauthRole",
+      "StackName": "amplify-linsolutionssupport-dev-f2aa2",
+      "StackId": "arn:aws:cloudformation:us-east-1:637423623801:stack/amplify-linsolutionssupport-dev-f2aa2/5e8b6e40-a1c5-11ef-ad56-0affdcaa902d",
+      "AmplifyAppId": "d1qk3qg8hj8t1q",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "linsolutionssupport350663c1350663c1": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "linsolutionssupport350663c1350663c1CreateAuthChallenge": {
+          "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+          "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1CreateAuthChallenge-31504979457038616369-build.zip"
+        },
+        "linsolutionssupport350663c1350663c1DefineAuthChallenge": {
+          "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+          "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1DefineAuthChallenge-32552f62414f78567677-build.zip"
+        },
+        "linsolutionssupport350663c1350663c1PostConfirmation": {
+          "GROUP": "Users",
+          "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+          "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1PostConfirmation-56744542576457344250-build.zip"
+        },
+        "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": "6Leen30qAAAAAE6NemwvIa016ieDPf3FVXua_DVO",
+          "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+          "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse-69477767412f64425343-build.zip"
+        },
+        "AdminQueriesc4e7d6d9": {
+          "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+          "s3Key": "amplify-builds/AdminQueriesc4e7d6d9-504a38316c6133434636-build.zip"
+        }
+      },
+      "api": {
+        "AdminQueries": {}
+      }
+    }
+  }
+}

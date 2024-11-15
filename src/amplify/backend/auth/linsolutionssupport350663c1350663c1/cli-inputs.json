@@ -1,0 +1,79 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "linsolutionssupport350663c1_identitypool_350663c1",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "linsol350663c1",
+    "userPoolName": "linsolutionssupport350663c1_userpool_350663c1",
+    "autoVerifiedAttributes": [
+      "phone_number"
+    ],
+    "mfaConfiguration": "ON",
+    "mfaTypes": [
+      "SMS Text Message",
+      "TOTP"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "birthdate",
+      "email",
+      "preferred_username"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "name",
+      "phone_number",
+      "birthdate",
+      "email",
+      "preferred_username"
+    ],
+    "userpoolClientReadAttributes": [
+      "email",
+      "name",
+      "phone_number"
+    ],
+    "userpoolClientLambdaRole": "linsol350663c1_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "350663c1",
+    "resourceName": "linsolutionssupport350663c1350663c1",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroups": true,
+    "adminQueries": true,
+    "triggers": {
+      "CreateAuthChallenge": [
+        "captcha-create-challenge"
+      ],
+      "DefineAuthChallenge": [
+        "captcha-define-challenge"
+      ],
+      "PostConfirmation": [
+        "add-to-group"
+      ],
+      "VerifyAuthChallengeResponse": [
+        "captcha-verify"
+      ]
+    },
+    "hostedUI": false,
+    "userPoolGroupList": [
+      "Admin",
+      "Users"
+    ],
+    "adminQueryGroup": "Admin",
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
+}

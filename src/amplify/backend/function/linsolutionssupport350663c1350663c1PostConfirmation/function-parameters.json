@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "add-to-group"
+  ],
+  "parentResource": "linsolutionssupport350663c1350663c1",
+  "functionName": "linsolutionssupport350663c1350663c1PostConfirmation",
+  "resourceName": "linsolutionssupport350663c1350663c1PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "C:\\snapshot\\amplify-cli\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "linsolutionssupport350663c1350663c1PostConfirmation",
+  "skipEdit": true
+}

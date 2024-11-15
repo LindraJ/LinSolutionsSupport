@@ -1,0 +1,244 @@
+{
+  "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "linsolutionssupport350663c1350663c1"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueriesc4e7d6d9"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "linsolutionssupport350663c1350663c1": {
+      "customAuth": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1CreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1DefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1PostConfirmation",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "ON",
+        "mfaTypes": [
+          "SMS",
+          "TOTP"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "BIRTHDATE",
+          "EMAIL",
+          "PREFERRED_USERNAME"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "PHONE_NUMBER"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "linsolutionssupport350663c1350663c1"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "AdminQueriesc4e7d6d9": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "linsolutionssupport350663c1350663c1"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "linsolutionssupport350663c1350663c1CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "linsolutionssupport350663c1350663c1DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "linsolutionssupport350663c1350663c1PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_AdminQueriesc4e7d6d9_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueriesc4e7d6d9"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueriesc4e7d6d9_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueriesc4e7d6d9"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1CreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1CreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1DefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1DefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1PostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse_RECAPTCHASECRET": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse"
+        }
+      ]
+    }
+  }
+}

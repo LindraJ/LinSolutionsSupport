@@ -1,0 +1,302 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-linsolutionssupport-dev-f2aa2-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423623801:role/amplify-linsolutionssupport-dev-f2aa2-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423623801:role/amplify-linsolutionssupport-dev-f2aa2-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+      "UnauthRoleName": "amplify-linsolutionssupport-dev-f2aa2-unauthRole",
+      "StackName": "amplify-linsolutionssupport-dev-f2aa2",
+      "StackId": "arn:aws:cloudformation:us-east-1:637423623801:stack/amplify-linsolutionssupport-dev-f2aa2/5e8b6e40-a1c5-11ef-ad56-0affdcaa902d",
+      "AmplifyAppId": "d1qk3qg8hj8t1q",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    }
+  },
+  "auth": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "linsolutionssupport350663c1350663c1",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ],
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/auth/userPoolGroups-cloudformation-template.json",
+        "logicalId": "authuserPoolGroups"
+      },
+      "output": {
+        "UsersGroupRole": "arn:aws:iam::637423623801:role/us-east-1_CpewPfWLI-UsersGroupRole",
+        "AdminGroupRole": "arn:aws:iam::637423623801:role/us-east-1_CpewPfWLI-AdminGroupRole"
+      },
+      "lastPushDirHash": "5DHrmRRxj2X+5Kbb+4tYJ6HKIt4="
+    },
+    "linsolutionssupport350663c1350663c1": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1CreateAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1DefineAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1PostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": true,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "BIRTHDATE",
+          "EMAIL",
+          "PREFERRED_USERNAME"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "ON",
+        "mfaTypes": [
+          "SMS",
+          "TOTP"
+        ],
+        "verificationMechanisms": [
+          "PHONE_NUMBER"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/auth/linsolutionssupport350663c1350663c1-cloudformation-template.json",
+        "logicalId": "authlinsolutionssupport350663c1350663c1"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::637423623801:role/sns350663c1f2aa2-dev",
+        "UserPoolId": "us-east-1_CpewPfWLI",
+        "AppClientIDWeb": "4fgf5h5ntesnjf0ouukm1v4j3",
+        "AppClientID": "6pafjc0tt5igkd0c58r7ubq3nb",
+        "IdentityPoolId": "us-east-1:1fb12191-1e54-40ec-a0ff-be9cec7363d2",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:637423623801:userpool/us-east-1_CpewPfWLI",
+        "IdentityPoolName": "linsolutionssupport350663c1_identitypool_350663c1__dev",
+        "UserPoolName": "linsolutionssupport350663c1_userpool_350663c1"
+      },
+      "lastPushDirHash": "oW1x3Iyck2P58v+Smf0JJ5G/KbU="
+    }
+  },
+  "function": {
+    "linsolutionssupport350663c1350663c1CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-11-13T14:59:17.321Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-11-13T14:59:17.404Z",
+      "distZipFilename": "linsolutionssupport350663c1350663c1CreateAuthChallenge-31504979457038616369-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+        "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1CreateAuthChallenge-31504979457038616369-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/function/linsolutionssupport350663c1350663c1CreateAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionlinsolutionssupport350663c1350663c1CreateAuthChallenge"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::637423623801:role/linsolutionssupport35c1CreateAuthChallengedfaa1d81ff5d-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:637423623801:function:linsolutionssupport35c1CreateAuthChallengedfaa1d81ff5d-dev",
+        "Name": "linsolutionssupport35c1CreateAuthChallengedfaa1d81ff5d-dev",
+        "LambdaExecutionRole": "linsolutionssupport35c1CreateAuthChallengedfaa1d81ff5d-dev"
+      },
+      "lastPushDirHash": "0haV7m0d2xuzHFkUoBcXCxDpKOk="
+    },
+    "linsolutionssupport350663c1350663c1DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-11-13T14:59:19.846Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-11-13T14:59:19.930Z",
+      "distZipFilename": "linsolutionssupport350663c1350663c1DefineAuthChallenge-32552f62414f78567677-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+        "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1DefineAuthChallenge-32552f62414f78567677-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/function/linsolutionssupport350663c1350663c1DefineAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionlinsolutionssupport350663c1350663c1DefineAuthChallenge"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::637423623801:role/linsolutionssupport35c1DefineAuthChallengedfaa1d81ff5d-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:637423623801:function:linsolutionssupport35c1DefineAuthChallengedfaa1d81ff5d-dev",
+        "Name": "linsolutionssupport35c1DefineAuthChallengedfaa1d81ff5d-dev",
+        "LambdaExecutionRole": "linsolutionssupport35c1DefineAuthChallengedfaa1d81ff5d-dev"
+      },
+      "lastPushDirHash": "4AFmwUQNI6RqVKNNM6LDLsDQ/ws="
+    },
+    "linsolutionssupport350663c1350663c1PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-11-13T14:59:23.299Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-11-13T14:59:26.891Z",
+      "distZipFilename": "linsolutionssupport350663c1350663c1PostConfirmation-56744542576457344250-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+        "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1PostConfirmation-56744542576457344250-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/function/linsolutionssupport350663c1350663c1PostConfirmation-cloudformation-template.json",
+        "logicalId": "functionlinsolutionssupport350663c1350663c1PostConfirmation"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::637423623801:role/linsolutionssupport350663c1350663c1PostConfirmation-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:637423623801:function:linsolutionssupport350663c1350663c1PostConfirmation-dev",
+        "Name": "linsolutionssupport350663c1350663c1PostConfirmation-dev",
+        "LambdaExecutionRole": "linsolutionssupport350663c1350663c1PostConfirmation-dev"
+      },
+      "lastPushDirHash": "OL245byfniYlxtZ1BLivaNDsKCU="
+    },
+    "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-11-13T14:59:30.643Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-11-13T14:59:32.586Z",
+      "distZipFilename": "linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse-69477767412f64425343-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+        "s3Key": "amplify-builds/linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse-69477767412f64425343-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/function/linsolutionssupport350663c1350663c1VerifyAuthChallengeResponse-cloudformation-template.json",
+        "logicalId": "functionlinsolutionssupport350663c1350663c1VerifyAuthChallengeResponse"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::637423623801:role/linsolutionssupport35AuthChallengeResponse3c8a0b18437c-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:637423623801:function:linsolutionssupport35AuthChallengeResponse3c8a0b18437c-dev",
+        "Name": "linsolutionssupport35AuthChallengeResponse3c8a0b18437c-dev",
+        "LambdaExecutionRole": "linsolutionssupport35AuthChallengeResponse3c8a0b18437c-dev"
+      },
+      "lastPushDirHash": "DV6JRGXqkFHa1htIjknuZz/u5Ng="
+    },
+    "AdminQueriesc4e7d6d9": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "linsolutionssupport350663c1350663c1",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "lastBuildTimeStamp": "2024-11-13T14:59:47.994Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-11-13T14:59:58.999Z",
+      "distZipFilename": "AdminQueriesc4e7d6d9-504a38316c6133434636-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-linsolutionssupport-dev-f2aa2-deployment",
+        "s3Key": "amplify-builds/AdminQueriesc4e7d6d9-504a38316c6133434636-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/function/AdminQueriesc4e7d6d9-cloudformation-template.json",
+        "logicalId": "functionAdminQueriesc4e7d6d9"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::637423623801:role/AdminQueriesc4e7d6d9LambdaRole-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:637423623801:function:AdminQueriesc4e7d6d9-dev",
+        "Name": "AdminQueriesc4e7d6d9-dev",
+        "LambdaExecutionRole": "AdminQueriesc4e7d6d9LambdaRole-dev"
+      },
+      "lastPushDirHash": "GoLUZ+cMQPp8OTzUWmQrYaDYDGI="
+    }
+  },
+  "api": {
+    "AdminQueries": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "linsolutionssupport350663c1350663c1",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "AdminQueriesc4e7d6d9",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-linsolutionssupport-dev-f2aa2-deployment/amplify-cfn-templates/api/AdminQueries-cloudformation-template.json",
+        "logicalId": "apiAdminQueries"
+      },
+      "lastPushTimeStamp": "2024-11-13T15:02:36.251Z",
+      "output": {
+        "ApiName": "AdminQueries",
+        "RootUrl": "https://4dircn23sj.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "4dircn23sj"
+      },
+      "lastPushDirHash": "KMWcYiHFKFIMfauuHOMn8V4ZOeQ="
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Buttons from './Buttons'
 import { library, icon } from '@fortawesome/fontawesome-svg-core'
 
 const Device = () => {
+    
     return(
         <div className='flex flex-column justify-center items-center vh-100'>
             <div className=" w-50 tc">
